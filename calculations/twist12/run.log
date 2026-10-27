@@ -1,0 +1,150 @@
+LAMMPS (29 Aug 2024)
+OMP_NUM_THREADS environment is not set. Defaulting to 1 thread. (src/comm.cpp:98)
+  using 1 OpenMP thread(s) per MPI task
+Loaded 1 plugins from /home/phD/jingchen/Suyang/software/deepmd-kit/lib/deepmd_lmp
+Reading data file ...
+  orthogonal box = (0 0 0) to (8.948744 8.948744 41.204)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  70 atoms
+  read_data CPU = 0.001 seconds
+Summary of lammps deepmd module ...
+  >>> Info of deepmd-kit:
+  installed to:       /home/phD/jingchen/Suyang/software/deepmd-kit
+  source:             
+  source branch:      HEAD
+  source commit:      36f34ee
+  source commit at:   2025-03-02 14:20:26 +0800
+  support model ver.: 1.1 
+  build variant:      cuda
+  build with tf inc:  /home/phD/jingchen/Suyang/software/deepmd-kit/lib/python3.12/site-packages/tensorflow/include;/home/phD/jingchen/Suyang/software/deepmd-kit/include
+  build with tf lib:  /home/phD/jingchen/Suyang/software/deepmd-kit/lib/python3.12/site-packages/tensorflow/libtensorflow_cc.so.2
+  build with pt lib:  torch;torch_library;/home/phD/jingchen/Suyang/software/deepmd-kit/lib/python3.12/site-packages/torch/lib/libc10.so;CUDA::nvrtc;torch::nvtoolsext;/home/phD/jingchen/Suyang/software/deepmd-kit/lib/python3.12/site-packages/torch/lib/libc10_cuda.so
+  set tf intra_op_parallelism_threads: 0
+  set tf inter_op_parallelism_threads: 0
+  >>> Info of lammps module:
+  use deepmd-kit at:  /home/phD/jingchen/Suyang/software/deepmd-kit  >>> Info of model(s):
+  using   1 model(s): model.pb 
+  rcut in model:      8
+  ntypes in model:    3
+WARNING: Calling write_dump before a full system init. (src/write_dump.cpp:88)
+
+CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE
+
+Your simulation uses code contributions which should be cited:
+- Type Label Framework: https://doi.org/10.1021/acs.jpcb.3c08419
+- USER-DEEPMD package:
+The log file lists these citations in BibTeX format.
+
+CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE
+
+Switching to 'neigh_modify every 1 delay 0 check yes' setting during minimization
+Generated 0 of 3 mixed pair_coeff terms from geometric mixing rule
+Neighbor list info ...
+  update: every = 1 steps, delay = 0 steps, check = yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 10
+  ghost atom cutoff = 10
+  binsize = 5, bins = 2 2 9
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair deepmd, perpetual
+      attributes: full, newton on
+      pair build: full/bin/atomonly
+      stencil: full/bin/3d
+      bin: standard
+Setting up cg style minimization ...
+  Unit style    : metal
+  Current step  : 0
+WARNING: Energy due to 3 extra global DOFs will be included in minimizer energies
+ (src/min.cpp:219)
+Per MPI rank memory allocation (min/avg/max) = 4.351 | 4.351 | 4.351 Mbytes
+   Step         PotEng          Fmax          Fnorm            Lx             Ly             Lz           Press           Pxx            Pyy            Pzz      
+         0  -522.93931      1.4605823      2.7668924      8.948744       8.948744       41.204        -9355.3818     -10370.84      -10370.84      -7324.465     
+        10  -522.95435      1.461069       2.738183       8.948744       8.948744       41.162796     -9019.4884     -10144.72      -10144.72      -6769.0242    
+        20  -522.96826      1.4614013      2.7115222      8.948744       8.948744       41.121592     -8680.4711     -9917.0233     -9917.0233     -6207.3667    
+        30  -522.98106      1.4615498      2.6870312      8.948744       8.948744       41.080388     -8338.2878     -9687.7168     -9687.7168     -5639.4296    
+        40  -522.99273      1.4614771      2.66482        8.948744       8.948744       41.039184     -7992.8929     -9456.7604     -9456.7604     -5065.1577    
+        50  -523.00328      1.4611335      2.6449791      8.948744       8.948744       40.99798      -7644.2359     -9224.1005     -9224.1005     -4484.5066    
+        60  -523.01271      1.4604502      2.6275662      8.948744       8.948744       40.956776     -7292.2571     -8989.6628     -8989.6628     -3897.4455    
+        70  -523.02105      1.4593258      2.6125831      8.948744       8.948744       40.915572     -6936.8798     -8753.3384     -8753.3384     -3303.9624    
+        80  -523.02832      1.457599       2.5999295      8.948744       8.948744       40.874368     -6577.9905     -8514.9537     -8514.9537     -2704.064     
+        90  -523.03462      1.4549871      2.5893011      8.948744       8.948744       40.833164     -6215.417      -8274.209      -8274.209      -2097.8329    
+       100  -523.04011      1.4509148      2.579912       8.948744       8.948744       40.79196      -5848.8328     -8030.4996     -8030.4996     -1485.4991    
+       110  -523.04526      1.4438733      2.5694623      8.948744       8.948744       40.750756     -5477.4099     -7782.2472     -7782.2472     -867.73526    
+       120  -523.0524       1.4265082      2.5462715      8.948744       8.948744       40.709552     -5097.1602     -7521.7818     -7521.7818     -247.91706    
+       130  -523.14851      1.0967692      2.04202        8.948744       8.948744       40.68483      -4679.9738     -7023.1718     -7023.1718      6.422107     
+       140  -523.22011      0.81491216     1.6301114      8.948744       8.948744       40.68483      -4468.9602     -6687.1725     -6687.1725     -32.535404    
+       150  -523.2571       0.66090597     1.4102539      8.948744       8.948744       40.68483      -4322.7919     -6479.127      -6479.127      -10.12178     
+       160  -523.31019      0.43183163     1.0882531      8.948744       8.948744       40.69307      -4120.8769     -6171.5036     -6171.5036     -19.623563    
+       170  -523.36516      0.18840219     0.74317684     8.948744       8.948744       40.701311     -3781.0422     -5743.8674     -5743.8674      144.60812    
+       180  -523.3779       0.15124552     0.66659696     8.948744       8.948744       40.717793     -3821.0488     -5730.191      -5730.191      -2.7644031    
+       190  -523.41381      0.084844581    0.39511374     8.948744       8.948744       40.734274     -3618.923      -5463.3621     -5463.3621      69.955112    
+       200  -523.4177       0.075952767    0.35895255     8.948744       8.948744       40.742515     -3669.3672     -5480.635      -5480.635      -46.831588    
+       210  -523.42056      0.069037202    0.33036134     8.948744       8.948744       40.742515     -3655.9325     -5458.8509     -5458.8509     -50.095521    
+       220  -523.42537      0.056353543    0.27938924     8.948744       8.948744       40.734274     -3570.3351     -5377.9254     -5377.9254      44.845285    
+       230  -523.4268       0.052278055    0.26279172     8.948744       8.948744       40.734274     -3574.0314     -5372.4696     -5372.4696      22.845134    
+       240  -523.42918      0.045125592    0.23347629     8.948744       8.948744       40.734274     -3588.4673     -5367.9798     -5367.9798     -29.442459    
+       250  -523.43072      0.040346739    0.21640756     8.948744       8.948744       40.726034     -3533.0918     -5321.5695     -5321.5695      43.86353     
+       260  -523.43182      0.036762261    0.20097996     8.948744       8.948744       40.726034     -3553.342      -5327.6894     -5327.6894     -4.6472532    
+       270  -523.43322      0.032155662    0.18493928     8.948744       8.948744       40.717793     -3514.1466     -5292.0358     -5292.0358      41.631573    
+       280  -523.43415      0.028992068    0.17001464     8.948744       8.948744       40.717793     -3546.1375     -5306.541      -5306.541      -25.330522    
+       290  -523.4352       0.025404502    0.15768185     8.948744       8.948744       40.709552     -3517.725      -5279.8213     -5279.8213      6.4676713    
+       300  -523.43622      0.023209507    0.14534221     8.948744       8.948744       40.701311     -3501.1269     -5261.0234     -5261.0234      18.666205    
+       310  -523.43816      0.020279717    0.11858704     8.948744       8.948744       40.68483      -3498.2597     -5243.0672     -5243.0672     -8.6445505    
+       320  -523.4389       0.018218543    0.10740716     8.948744       8.948744       40.676589     -3510.0319     -5245.2335     -5245.2335     -39.62859     
+       330  -523.4394       0.017469881    0.10194205     8.948744       8.948744       40.668348     -3502.1883     -5236.2596     -5236.2596     -34.045903    
+       340  -523.43987      0.016608064    0.096578259    8.948744       8.948744       40.660107     -3497.0977     -5229.3592     -5229.3592     -32.574648    
+       350  -523.44033      0.015758096    0.090464478    8.948744       8.948744       40.651866     -3497.9332     -5226.4542     -5226.4542     -40.891172    
+       360  -523.44088      0.016637353    0.091423293    8.948744       8.948744       40.635385     -3447.6619     -5189.0414     -5189.0414      35.097128    
+       370  -523.44221      0.01134914     0.052208378    8.948744       8.948744       40.618903     -3618.6584     -5290.5885     -5290.5885     -274.79807    
+       380  -523.44291      0.010333286    0.054366697    8.948744       8.948744       40.58594      -3491.2437     -5201.5301     -5201.5301     -70.670978    
+       390  -523.44353      0.0087820805   0.045764561    8.948744       8.948744       40.560911     -3476.4042     -5186.2561     -5186.2561     -56.70049     
+       400  -523.44415      0.0071790783   0.03685278     8.948744       8.948744       40.527948     -3446.9963     -5159.9303     -5159.9303     -21.128427    
+       410  -523.44455      0.0047701343   0.024196389    8.948744       8.948744       40.502497     -3451.1009     -5156.6654     -5156.6654     -39.972136    
+       420  -523.44477      0.004098347    0.019969377    8.948744       8.948744       40.478421     -3420.0727     -5131.4176     -5131.4176      2.617099     
+       430  -523.4449       0.0077693936   0.027505264    8.948744       8.948744       40.459892     -3428.9285     -5134.2311     -5134.2311     -18.323326    
+       440  -523.44497      0.001899204    0.0067221803   8.948744       8.948744       40.440254     -3405.8358     -5112.8142     -5112.8142      8.1209731    
+       450  -523.44498      2.26806e-05    9.3935216e-05  8.948744       8.948744       40.431582     -3408.4564     -5112.7253     -5112.7253      0.081324285  
+       451  -523.44498      1.9139551e-05  9.8332139e-05  8.948744       8.948744       40.431589     -3408.5203     -5112.7673     -5112.7673     -0.026360866  
+Loop time of 7.22033 on 1 procs for 451 steps with 70 atoms
+
+114.5% CPU use with 1 MPI tasks x 1 OpenMP threads
+
+Minimization stats:
+  Stopping criterion = energy tolerance
+  Energy initial, next-to-last, final = 
+     -522.939312281356  -523.444976097895  -523.444976097914
+  Force two-norm initial, final = 15.336099 0.00011232328
+  Force max component initial, final = 15.084437 5.4289128e-05
+  Final line search alpha, max atom move = 0.60614709 3.2907197e-05
+  Iterations, force evaluations = 451 482
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 7.1866     | 7.1866     | 7.1866     |   0.0 | 99.53
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0.005203   | 0.005203   | 0.005203   |   0.0 |  0.07
+Output  | 0.0066455  | 0.0066455  | 0.0066455  |   0.0 |  0.09
+Modify  | 0          | 0          | 0          |   0.0 |  0.00
+Other   |            | 0.02185    |            |       |  0.30
+
+Nlocal:             70 ave          70 max          70 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:            696 ave         696 max         696 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:              0 ave           0 max           0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+FullNghs:        12970 ave       12970 max       12970 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 12970
+Ave neighs/atom = 185.28571
+Neighbor list builds = 0
+Dangerous builds = 0
+System init for write_data ...
+Generated 0 of 3 mixed pair_coeff terms from geometric mixing rule
+System init for write_restart ...
+Generated 0 of 3 mixed pair_coeff terms from geometric mixing rule
+All done
+Total wall time: 0:00:09

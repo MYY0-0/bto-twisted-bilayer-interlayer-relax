@@ -1,0 +1,63 @@
+# Input file for uniaxial tensile loading of single crystal aluminum
+# Mark Tschopp, November 2010
+
+# ------------------------ INITIALIZATION ----------------------------
+units 		metal
+dimension	3
+boundary	p	p	p
+atom_style	atomic
+atom_modify map array
+
+# ---------- Create Atoms -------------------------------------------- 
+
+read_data BTO.data
+
+mass 1 137.327  # Ba
+mass 2 47.867  # Ti
+mass 3 15.9994  # O
+
+# ------------------------ FORCE FIELDS ------------------------------
+
+pair_style    deepmd model.pb
+pair_coeff      * *  
+
+
+
+#delete_atoms overlap 1.0 all all
+neighbor 2.0 bin 
+neigh_modify delay 10 check yes 
+
+
+# ------------------------- compute properties----------------------------
+compute eng all pe/atom
+compute 1 all ke/atom 
+compute eatoms all reduce sum c_eng
+#compute strs all stress/atom NULL virial 
+
+#------------------------- Minimization ------------------------
+reset_timestep 0
+timestep  0.001
+
+thermo     10
+thermo_style   custom step pe fmax fnorm lx ly lz press pxx pyy pzz
+thermo_modify  lost ignore flush yes
+write_dump      all custom BTO_before_relax.xyz id type x y z modify sort id
+dump            1 all custom 50 relax_traj.xyz id type x y z
+dump_modify     1 element Ba Ti O sort id
+
+
+fix 1 all box/relax z 0.0
+min_style cg
+minimize 1.0e-12 1.0e-8 50000 200000
+unfix 1
+
+undump 1
+
+
+
+
+write_data      BTO_relaxed.data
+write_dump      all custom BTO_relaxed.xyz id type x y z modify sort id
+write_restart   restart.BTO_relaxed
+# SIMULATION DONE
+print "All done"

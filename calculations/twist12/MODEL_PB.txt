@@ -1,0 +1,2 @@
+﻿Place or symlink ../../potentials/model.pb here as model.pb
+pair_style deepmd model.pb
